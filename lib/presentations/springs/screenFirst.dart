@@ -13,9 +13,11 @@ class _ScreenOneState extends State<ScreenFirst> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text("Alimentos",style: TextStyle(color:const Color.fromARGB(255, 216, 148, 144),
-        
-        ),
+        title: Text(
+          "Alimentos",
+          style: TextStyle(
+            color: const Color.fromARGB(255, 216, 148, 144),
+          ),
         ),
       ),
       drawer: MenuDrawer(),
