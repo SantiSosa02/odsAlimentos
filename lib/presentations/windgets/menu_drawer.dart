@@ -10,59 +10,65 @@ class MenuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
+      child: Column(
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 134, 213, 216)),
-            child: Text(
-              "Menu",
-              style: TextStyle(fontSize: 34),
+          Container(
+            height: 300,
+            decoration:const BoxDecoration(
+              color:  Color.fromARGB(255, 178, 222, 180),
+              image: DecorationImage(image: AssetImage('assets/images/comida.jpeg'),
+              fit:BoxFit.cover,
+              ),
             ),
           ),
+          const SizedBox(height: 15),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text("Home page"),
+            leading:const  Icon(Icons.home),
+            title: const Text("Pagina principal",style: TextStyle(fontSize: 15),),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ScreenFirst(),
+                  builder: (context) => const ScreenFirst(),
                 ),
               );
             },
           ),
+         const SizedBox(height: 15),
           ListTile(
-            leading: Icon(Icons.access_time_sharp),
-            title: Text("Second page"),
+            leading:const  Icon(Icons.restaurant),
+            title: const Text("Todos los alimentos"),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ScreenSecond(),
+                  builder: (context) =>const  ScreenSecond(),
                 ),
               );
             },
           ),
+         const SizedBox(height: 15),
           ListTile(
-            leading: Icon(Icons.account_box_sharp),
-            title: Text("Thrid page"),
+            leading: const Icon(Icons.date_range_rounded),
+            title:const  Text("Alimentos cercanos a vencerse"),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ScreenThird(),
+                  builder: (context) => const ScreenThird(),
                 ),
               );
             },
           ),
-           ListTile(
-            leading: Icon(Icons.account_box_sharp),
-            title: Text("Thrid page"),
+          const SizedBox(height: 15),
+          ListTile(
+            leading: const Icon(Icons.category),
+            title: const  Text("Alimentos por categoria"),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ScreenFourth(),
+                  builder: (context) =>const  ScreenFourth(),
                 ),
               );
             },
