@@ -15,6 +15,14 @@ class _ScreenFourthState extends State<ScreenFourth> {
     return Scaffold(
       appBar: MenuAppBar(),
       drawer: MenuDrawer(),
+      body: Center(
+        child: Row(
+          children: [
+            Image(image: AssetImage('assets/images/comida3.jpeg'),
+                ),
+          ],
+        ),
+      ),
     );
   }
 }
