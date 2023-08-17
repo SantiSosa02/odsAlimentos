@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ods_alimentos/presentations/springs/screenFourth.dart';
 import 'package:ods_alimentos/presentations/springs/screenSecond.dart';
+import 'package:ods_alimentos/presentations/springs/screenThird.dart';
 import 'package:ods_alimentos/presentations/windgets/menu_appbar.dart';
 import 'package:ods_alimentos/presentations/windgets/menu_drawer.dart';
 
@@ -82,7 +84,7 @@ class _ScreenOneState extends State<ScreenFirst> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ScreenSecond(),
+                            builder: (context) => const ScreenThird(),
                           ),
                         );
                       },
@@ -99,14 +101,14 @@ class _ScreenOneState extends State<ScreenFirst> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ScreenSecond(),
+                        builder: (context) => const ScreenFourth(),
                       ),
                     );
                   },
                   style: ElevatedButton.styleFrom(primary: Color.fromARGB(255, 173, 209, 169),
                   minimumSize: Size(45, 45)
                   ),
-                  child: const Text("Tercer Botón"),
+                  child: const Text("Alimentos por catgoria"),
                 ),
               ],
             ),
