@@ -23,6 +23,12 @@ class _ScreenSecondState extends State<ScreenSecond> {
       'Fecha_vencimiento': DateTime(2017, 9, 7, 17, 30),
       'Categoria': 'Carne',
     },
+    {
+      'Nombre': 'Lentejas',
+      'Cantidad': '12',
+      'Fecha_vencimiento': DateTime(2017, 9, 7, 17, 30),
+      'Categoria': 'Granos',
+    },
     // Agrega más elementos a la lista si es necesario
   ];
 
