@@ -15,20 +15,20 @@ class _ScreenOneState extends State<ScreenFirst> {
     return const Scaffold(
       appBar:  MenuAppBar(),
       drawer:  MenuDrawer(),
-      body: Center(
-        child: Row(
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                Image(image: AssetImage('assets/images/comida3.jpeg'),
-                ),
-              ],
-              ),
-            )
-          ],
+   body: Stack(
+        children: [
+          Positioned(
+            top:0,
+            left: 0,
+            right: 0,
+            bottom: 400,
+            child: Image(
+              image: AssetImage('assets/images/comida3.jpeg'), // Ruta de la imagen
+              fit: BoxFit.cover,
+            ),
           ),
-        )
+        ],
+      ),
     );
   }
 }
