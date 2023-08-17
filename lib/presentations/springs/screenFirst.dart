@@ -23,12 +23,14 @@ class _ScreenOneState extends State<ScreenFirst> {
             right: 0,
             bottom: 400,
             child: Image(
-              image: AssetImage('assets/images/comida3.jpeg'), // Ruta de la imagen
+              image: AssetImage('assets/images/comida7.jpg'),// Ruta de la imagen
               fit: BoxFit.cover,
             ),
           ),
+           Row(children: [],)
         ],
       ),
+     
     );
   }
 }
