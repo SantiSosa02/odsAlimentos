@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../windgets/menu_appbar.dart';
+import '../windgets/menu_drawer.dart';
+
 class ScreenThird extends StatefulWidget {
   const ScreenThird({super.key});
 
@@ -10,6 +13,9 @@ class ScreenThird extends StatefulWidget {
 class _ScreenThirdState extends State<ScreenThird> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: MenuAppBar(),
+      drawer: MenuDrawer()
+    );
   }
 }
