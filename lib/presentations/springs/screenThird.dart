@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_alimentos/presentations/springs/screenSecond.dart';
 
 import '../windgets/menu_appbar.dart';
 import '../windgets/menu_drawer.dart';
@@ -11,16 +12,17 @@ class ScreenThird extends StatefulWidget {
 }
 
 class _ScreenThirdState extends State<ScreenThird> {
-  List<Map<String, dynamic>> alimentos = [
-  ];
+  List<Map<String, dynamic>> alimentos = ScreenSecond.alimentos;
 
 List<Map<String, dynamic>> obtenerAlimentosProximosAVencer() {
   DateTime today = DateTime.now();
+  
   DateTime tenDaysFromNow = today.add(Duration(days: 10));
 
   return alimentos.where((alimento) {
     DateTime fechaVencimiento = alimento['Fecha_vencimiento'];
     return fechaVencimiento.isBefore(tenDaysFromNow) || fechaVencimiento.isAtSameMomentAs(today);
+    
   }).toList();
 }
 
@@ -50,9 +52,6 @@ List<Map<String, dynamic>> obtenerAlimentosProximosAVencer() {
                   Text('Cantidad: ${alimento['Cantidad']}'),
                   Text('Fecha de vencimiento: ${alimento['Fecha_vencimiento']}'),
                   Text('Categoría: ${alimento['Categoria']}'),
-
-
- 
                 ],
               ),
             ),

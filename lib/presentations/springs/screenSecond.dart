@@ -3,14 +3,9 @@ import 'package:ods_alimentos/presentations/windgets/menu_appbar.dart';
 import 'package:ods_alimentos/presentations/windgets/menu_drawer.dart';
 
 class ScreenSecond extends StatefulWidget {
-  const ScreenSecond({Key? key}) : super(key: key);
+  const ScreenSecond({Key? key, alimentos}) : super(key: key);
 
-  @override
-  State<ScreenSecond> createState() => _ScreenSecondState();
-}
-
-class _ScreenSecondState extends State<ScreenSecond> {
-  List<Map<String, dynamic>> alimentos = [
+  static List<Map<String, dynamic>> alimentos = [
     {
       'Nombre': 'Res',
       'Cantidad': '10',
@@ -93,27 +88,34 @@ class _ScreenSecondState extends State<ScreenSecond> {
   ];
 
   @override
+  State<ScreenSecond> createState() => _ScreenSecondState();
+}
+
+class _ScreenSecondState extends State<ScreenSecond> {
+ 
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MenuAppBar(),
       drawer: MenuDrawer(),
       body: ListView.builder(
-        itemCount: alimentos.length,
+        itemCount: ScreenSecond.alimentos.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
             elevation: 4, // Elevación de la tarjeta
             margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: ListTile(
               title: Text(
-                '${alimentos[index]['Nombre']}',
+                '${ScreenSecond.alimentos[index]['Nombre']}',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Cantidad: ${alimentos[index]['Cantidad']}'),
-                  Text('Fecha de vencimiento: ${alimentos[index]['Fecha_vencimiento']}'),
-                  Text('Categoría: ${alimentos[index]['Categoria']}'),
+                  Text('Cantidad: ${ScreenSecond.alimentos[index]['Cantidad']}'),
+                  Text('Fecha de vencimiento: ${ScreenSecond.alimentos[index]['Fecha_vencimiento']}'),
+                  Text('Categoría: ${ScreenSecond.alimentos[index]['Categoria']}'),
                 ],
               ),
             ),
