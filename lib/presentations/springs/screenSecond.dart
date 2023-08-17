@@ -29,6 +29,66 @@ class _ScreenSecondState extends State<ScreenSecond> {
       'Fecha_vencimiento': DateTime(2017, 9, 7, 17, 30),
       'Categoria': 'Granos',
     },
+    {
+        'Nombre': 'Arroz',
+        'Cantidad': '5 kg',
+        'Fecha_vencimiento': DateTime(2023, 10, 15, 14, 0),
+        'Categoria': 'Granos'
+    },
+    {
+        'Nombre': 'Espinaca',
+        'Cantidad': '2 manojos',
+        'Fecha_vencimiento': DateTime(2023, 8, 25, 12, 30),
+        'Categoria': 'Vegetales'
+    },
+    {
+        'Nombre': 'Pollo',
+        'Cantidad': '2 pechugas',
+        'Fecha_vencimiento': DateTime(2023, 8, 20, 18, 15),
+        'Categoria': 'Carnes'
+    },
+    {
+        'Nombre': 'Leche',
+        'Cantidad': '1 litro',
+        'Fecha_vencimiento': DateTime(2023, 9, 2, 10, 0),
+        'Categoria': 'Lacteos'
+    },
+    {
+        'Nombre': 'Manzana',
+        'Cantidad': '8 unidades',
+        'Fecha_vencimiento': DateTime(2023, 8, 22, 16, 45),
+        'Categoria': 'Frutas'
+    },
+    {
+        'Nombre': 'Quinua',
+        'Cantidad': '800 g',
+        'Fecha_vencimiento': DateTime(2023, 9, 10, 13, 15),
+        'Categoria': 'Granos'
+    },
+    {
+        'Nombre': 'Pimiento',
+        'Cantidad': '3 unidades',
+        'Fecha_vencimiento': DateTime(2023, 8, 23, 9, 0),
+        'Categoria': 'Vegetales'
+    },
+    {
+        'Nombre': 'Res',
+        'Cantidad': '1 kg',
+        'Fecha_vencimiento': DateTime(2023, 8, 18, 17, 45),
+        'Categoria': 'Carnes'
+    },
+    {
+        'Nombre': 'Yogur',
+        'Cantidad': '500 g',
+        'Fecha_vencimiento': DateTime(2023, 9, 5, 11, 30),
+        'Categoria': 'Lacteos'
+    },
+    {
+        'Nombre': 'Uvas',
+        'Cantidad': '1 racimo',
+        'Fecha_vencimiento': DateTime(2023, 8, 24, 14, 15),
+        'Categoria': 'Frutas'
+    }
     // Agrega más elementos a la lista si es necesario
   ];
 
