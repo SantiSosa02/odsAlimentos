@@ -21,9 +21,11 @@ List<Map<String, dynamic>> obtenerAlimentosProximosAVencer() {
 
   return alimentos.where((alimento) {
     DateTime fechaVencimiento = alimento['Fecha_vencimiento'];
-    return fechaVencimiento.isBefore(tenDaysFromNow) || fechaVencimiento.isAtSameMomentAs(today);
+    //return fechaVencimiento.isBefore(tenDaysFromNow) || fechaVencimiento.isAtSameMomentAs(today);
+    return fechaVencimiento.isBefore(tenDaysFromNow) && fechaVencimiento.isAfter(today);
     
   }).toList();
+  
 }
 
 
