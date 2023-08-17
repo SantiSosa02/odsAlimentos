@@ -12,17 +12,29 @@ class ScreenFourth extends StatefulWidget {
 class _ScreenFourthState extends State<ScreenFourth> {
   @override
   Widget build(BuildContext context) {
+    String nombre = 'Arroz';
+    int cantidad = 100;
+    String fechaVencimiento = '12-06-2030';
+    String categoria = 'Granos';
+
     return Scaffold(
       appBar: MenuAppBar(),
       drawer: MenuDrawer(),
       body: Center(
-        child: Row(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(image: AssetImage('assets/images/comida3.jpeg'),
-                ),
+            Image(image: AssetImage('assets/images/comida3.jpeg')),
+            SizedBox(height: 20),
+            Text('Nombre: $nombre'),
+            Text('Cantidad: $cantidad'),
+            Text('Fecha Vencimiento: $fechaVencimiento'),
+            Text('Categoria: $categoria')
           ],
         ),
       ),
+    
     );
   }
 }
