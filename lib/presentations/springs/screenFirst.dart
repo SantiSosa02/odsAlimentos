@@ -15,7 +15,7 @@ class ScreenFirst extends StatefulWidget {
 class _ScreenOneState extends State<ScreenFirst> {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       appBar: const MenuAppBar(),
       drawer: const MenuDrawer(),
       body: Stack(
@@ -31,15 +31,15 @@ class _ScreenOneState extends State<ScreenFirst> {
             ),
           ),
           const Positioned(
-            bottom:480,
+            bottom: 480,
             left: 120,
             right: 0,
-              child:  Text(
-                "¡Alimentos!",
-                style: TextStyle(
-                  fontSize: 30, 
+            child: Text(
+              "¡Alimentos!",
+              style: TextStyle(
+                  fontSize: 30,
                   fontFamily: 'Caprismo',
-                  color:Color.fromARGB(255, 251, 232, 192)),
+                  color: Color.fromARGB(255, 251, 232, 192)),
             ),
           ),
           Positioned(
@@ -53,7 +53,6 @@ class _ScreenOneState extends State<ScreenFirst> {
                 "En NutriSabor, saborea experiencias culinarias únicas con alimentos frescos y saludables. Desde carnes de calidad hasta vibrantes vegetales y frutas, explora un mundo de sabores excepcionales. Descubre cómo transformamos ingredientes en momentos memorables.",
                 style: TextStyle(fontSize: 15, fontFamily: 'Lora'),
               ),
-            
             ),
           ),
           Positioned(
@@ -74,9 +73,9 @@ class _ScreenOneState extends State<ScreenFirst> {
                           ),
                         );
                       },
-                      style: ElevatedButton.styleFrom(primary: Color.fromARGB(255, 143, 183, 215),
-                      minimumSize: Size(45, 45)
-                      ),
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 143, 183, 215),
+                          minimumSize: Size(45, 45)),
                       child: const Text("Todos los Alimentos"),
                     ),
                     ElevatedButton(
@@ -88,14 +87,16 @@ class _ScreenOneState extends State<ScreenFirst> {
                           ),
                         );
                       },
-                      style: ElevatedButton.styleFrom(primary: const Color.fromARGB(255, 188, 168, 167),
-                      minimumSize: Size(45, 45)
-                      ),
+                      style: ElevatedButton.styleFrom(
+                          primary: const Color.fromARGB(255, 188, 168, 167),
+                          minimumSize: Size(45, 45)),
                       child: const Text("Alimentos a vencer"),
                     ),
                   ],
                 ),
-                SizedBox(height: 16), // Espacio entre los dos primeros botones y el tercero
+                SizedBox(
+                    height:
+                        16), // Espacio entre los dos primeros botones y el tercero
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
