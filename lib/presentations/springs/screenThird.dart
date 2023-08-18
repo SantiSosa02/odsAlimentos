@@ -14,53 +14,65 @@ class ScreenThird extends StatefulWidget {
 class _ScreenThirdState extends State<ScreenThird> {
   List<Map<String, dynamic>> alimentos = ScreenSecond.alimentos;
 
-List<Map<String, dynamic>> obtenerAlimentosProximosAVencer() {
-  DateTime today = DateTime.now();
-  
-  DateTime tenDaysFromNow = today.add(Duration(days: 10));
+  List<Map<String, dynamic>> obtenerAlimentosProximosAVencer() {
+    DateTime today = DateTime.now();
+    DateTime tenDaysFromNow = today.add(Duration(days: 10));
 
-  return alimentos.where((alimento) {
-    DateTime fechaVencimiento = alimento['Fecha_vencimiento'];
-    //return fechaVencimiento.isBefore(tenDaysFromNow) || fechaVencimiento.isAtSameMomentAs(today);
-    return fechaVencimiento.isBefore(tenDaysFromNow) && fechaVencimiento.isAfter(today);
-    
-  }).toList();
-  
-}
-
+    return alimentos.where((alimento) {
+      DateTime fechaVencimiento = alimento['Fecha_vencimiento'];
+      return fechaVencimiento.isBefore(tenDaysFromNow) &&
+          fechaVencimiento.isAfter(today);
+    }).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> alimentosProximosAVencer = obtenerAlimentosProximosAVencer();
+    List<Map<String, dynamic>> alimentosProximosAVencer =
+        obtenerAlimentosProximosAVencer();
 
     return Scaffold(
-      appBar: MenuAppBar(),
-      drawer: MenuDrawer(),
-      body: ListView.builder(
-        itemCount: alimentosProximosAVencer.length,
-        itemBuilder: (BuildContext context, int index) {
-          Map<String, dynamic> alimento = alimentosProximosAVencer[index];
-          return Card(
-            elevation: 4,
-            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: ListTile(
-              title: Text(
-                '${alimento['Nombre']}',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Cantidad: ${alimento['Cantidad']}'),
-                  Text('Fecha de vencimiento: ${alimento['Fecha_vencimiento']}'),
-                  Text('Categoría: ${alimento['Categoria']}'),
-                ],
+      appBar: const MenuAppBar(),
+      drawer: const MenuDrawer(),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Alimentos Próximos a Vencer',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          );
-        },
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: alimentosProximosAVencer.length,
+              itemBuilder: (BuildContext context, int index) {
+                Map<String, dynamic> alimento = alimentosProximosAVencer[index];
+                return Card(
+                  elevation: 4,
+                  margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: ListTile(
+                    title: Text(
+                      '${alimento['Nombre']}',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Cantidad: ${alimento['Cantidad']}'),
+                        Text('Fecha de vencimiento: ${alimento['Fecha_vencimiento']}'),
+                        Text('Categoría: ${alimento['Categoria']}'),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
-      
     );
   }
 }

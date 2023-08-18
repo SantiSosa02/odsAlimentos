@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ods_alimentos/presentations/windgets/menu_appbar.dart';
 import 'package:ods_alimentos/presentations/windgets/menu_drawer.dart';
+import 'package:intl/intl.dart'; 
 
 class ScreenSecond extends StatefulWidget {
-  const ScreenSecond({Key? key, alimentos}) : super(key: key);
+  const ScreenSecond({Key? key}) : super(key: key);
 
-  static List<Map<String, dynamic>> alimentos = [
+@override
+State<ScreenSecond> createState() => _ScreenSecondState();
+}
+
+class _ScreenSecondState extends State<ScreenSecond> {
+  List<Map<String, dynamic>> alimentos = [
     {
       'Nombre': 'Cerdo',
       'Cantidad': '10',
@@ -87,41 +93,51 @@ class ScreenSecond extends StatefulWidget {
     // Agrega más elementos a la lista si es necesario
   ];
 
-  @override
-  State<ScreenSecond> createState() => _ScreenSecondState();
-}
-
-class _ScreenSecondState extends State<ScreenSecond> {
- 
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MenuAppBar(),
-      drawer: MenuDrawer(),
-      body: ListView.builder(
-        itemCount: ScreenSecond.alimentos.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            elevation: 4, // Elevación de la tarjeta
-            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: ListTile(
-              title: Text(
-                '${ScreenSecond.alimentos[index]['Nombre']}',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Cantidad: ${ScreenSecond.alimentos[index]['Cantidad']}'),
-                  Text('Fecha de vencimiento: ${ScreenSecond.alimentos[index]['Fecha_vencimiento']}'),
-                  Text('Categoría: ${ScreenSecond.alimentos[index]['Categoria']}'),
-                ],
-              ),
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: MenuAppBar(),
+    drawer: MenuDrawer(),
+    body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 16), 
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Lista de alimentos',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-          );
-        },
-      ),
-    );
-  }
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: alimentos.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Card(
+                elevation: 4,
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: ListTile(
+                  title: Text(
+                    '${alimentos[index]['Nombre']}',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Cantidad: ${alimentos[index]['Cantidad']}'),
+                      Text('Fecha de vencimiento: ${DateFormat('dd/MM/yyyy').format(alimentos[index]['Fecha_vencimiento'])}'),
+                      Text('Categoría: ${alimentos[index]['Categoria']}'),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    ),
+  );
+}
 }
