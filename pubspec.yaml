@@ -73,6 +73,9 @@ flutter:
     - assets/images/cereal.jpg
     - assets/images/pan.jpg
     - assets/images/leche.jpg
+    - assets/images/res.jpg
+    - assets/images/cerdo.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

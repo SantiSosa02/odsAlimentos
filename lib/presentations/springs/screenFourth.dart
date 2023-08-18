@@ -14,6 +14,7 @@ class _ScreenFourthState extends State<ScreenFourth> {
   List<Map<String, dynamic>> categorias = [
     {'nombre': 'Granos'},
     {'nombre': 'Lácteos'},
+    {'nombre': 'Carnes'}
   ];
 
   Map<String, List<Map<String, dynamic>>> productosCategoria = {
@@ -43,6 +44,20 @@ class _ScreenFourthState extends State<ScreenFourth> {
         'cantidad': 5,
         'fechaVencimiento': '20-08-2023',
         'img': 'assets/images/cereal.jpg'
+      },
+    ],
+    'Carnes': [
+      {
+        'nombre': 'Res',
+        'cantidad': 26,
+        'fechaVencimiento': '15-07-2023',
+        'img': 'assets/images/res.jpg'
+      },
+      {
+        'nombre': 'cerdo',
+        'cantidad': 40,
+        'fechaVencimiento': '10-09-2023',
+        'img': 'assets/images/cerdo.jpg'
       },
     ],
   };
