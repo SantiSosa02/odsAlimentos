@@ -28,7 +28,7 @@ class _ScreenFourthState extends State<ScreenFourth> {
         'nombre': 'Trigo',
         'cantidad': 50,
         'fechaVencimiento': '15-08-2029',
-        'img': 'assets/images/comida2.jpeg'
+        'img': 'assets/images/pan.jpg'
       },
     ],
     'Lácteos': [
@@ -36,13 +36,13 @@ class _ScreenFourthState extends State<ScreenFourth> {
         'nombre': 'Leche',
         'cantidad': 2,
         'fechaVencimiento': '15-07-2023',
-        'img': 'assets/images/comida.jpeg'
+        'img': 'assets/images/leche.jpg'
       },
       {
         'nombre': 'Yogur',
         'cantidad': 5,
         'fechaVencimiento': '20-08-2023',
-        'img': 'assets/images/comida.jpeg'
+        'img': 'assets/images/cereal.jpg'
       },
     ],
   };
@@ -88,39 +88,28 @@ class _ScreenFourthState extends State<ScreenFourth> {
                     Container(
                       margin: EdgeInsets.symmetric(vertical: 10),
                       child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            for (var product
-                                in productosCategoria[seleccionarCategoria]!)
-                              Container(
-                                margin: EdgeInsets.symmetric(vertical: 10),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                        width: 100,
-                                        height: 100,
-                                        decoration: BoxDecoration(
-                                          border:
-                                              Border.all(color: Colors.green),
-                                        ),
-                                        child: Image.asset(product['img'])),
-                                    SizedBox(width: 20),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Nombre: ${product['nombre']}'),
-                                        Text(
-                                            'Cantidad: ${product['cantidad']}'),
-                                        Text(
-                                            'Fecha Vencimiento: ${product['fechaVencimiento']}'),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                          ]),
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 100,
+                            height: 100,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green),
+                            ),
+                            child: Image.asset(product['img']),
+                          ),
+                          SizedBox(width: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Nombre: ${product['nombre']}'),
+                              Text('Cantidad: ${product['cantidad']}'),
+                              Text(
+                                  'Fecha Vencimiento: ${product['fechaVencimiento']}'),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                 ],
               ),
