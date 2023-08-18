@@ -107,7 +107,7 @@ Widget build(BuildContext context) {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Lista de alimentos',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,),
             ),
           ),
         ),

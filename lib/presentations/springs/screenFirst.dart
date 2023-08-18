@@ -31,15 +31,15 @@ class _ScreenOneState extends State<ScreenFirst> {
             ),
           ),
           const Positioned(
-            bottom: 480,
-            left: 120,
+            bottom: 430,
+            left: 70,
             right: 0,
             child: Text(
               "¡Alimentos!",
               style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 45,
                   fontFamily: 'Caprismo',
-                  color: Color.fromARGB(255, 251, 232, 192)),
+                  color: Color.fromARGB(255, 255, 255, 255)),
             ),
           ),
           Positioned(
