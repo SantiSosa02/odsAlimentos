@@ -69,6 +69,10 @@ flutter:
     - assets/images/comida4.png
     - assets/images/comida6.jpg
     - assets/images/comida7.jpg
+    - assets/images/arroz.jpg
+    - assets/images/cereal.jpg
+    - assets/images/pan.jpg
+    - assets/images/leche.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

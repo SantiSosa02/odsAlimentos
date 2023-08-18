@@ -11,56 +11,111 @@ class ScreenFourth extends StatefulWidget {
 }
 
 class _ScreenFourthState extends State<ScreenFourth> {
+  List<Map<String, dynamic>> categorias = [
+    {'nombre': 'Granos'},
+    {'nombre': 'Lácteos'},
+  ];
+
+  Map<String, List<Map<String, dynamic>>> productosCategoria = {
+    'Granos': [
+      {
+        'nombre': 'Arroz',
+        'cantidad': 100,
+        'fechaVencimiento': '12-06-2030',
+        'img': 'assets/images/arroz.jpg'
+      },
+      {
+        'nombre': 'Trigo',
+        'cantidad': 50,
+        'fechaVencimiento': '15-08-2029',
+        'img': 'assets/images/pan.jpg'
+      },
+    ],
+    'Lácteos': [
+      {
+        'nombre': 'Leche',
+        'cantidad': 2,
+        'fechaVencimiento': '15-07-2023',
+        'img': 'assets/images/leche.jpg'
+      },
+      {
+        'nombre': 'Yogur',
+        'cantidad': 5,
+        'fechaVencimiento': '20-08-2023',
+        'img': 'assets/images/cereal.jpg'
+      },
+    ],
+  };
+
+  String seleccionarCategoria = '';
+
   @override
   Widget build(BuildContext context) {
-    String nombre = 'Arroz';
-    int cantidad = 100;
-    String fechaVencimiento = '12-06-2030';
-    String categoria = 'Granos';
-
     return Scaffold(
       appBar: MenuAppBar(),
       drawer: MenuDrawer(),
       body: Center(
-          child: Container(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.green),
-              ),
-              child: Image(
-                image: AssetImage('assets/images/comida3.jpeg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            //Espacio
-            SizedBox(width: 20),
-
-            Column(
-              children: [
-                Text('Nombre: $nombre'),
-                Text('Cantidad: $cantidad'),
-                Text('Fecha Vencimiento: $fechaVencimiento'),
-                Text('Categoria: $categoria'),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ScreenFirst()));
-                  },
-                  child: Text('mostrar'),
+            Text('Categorías'),
+            SizedBox(height: 20),
+            for (var categoria in categorias)
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    seleccionarCategoria = categoria['nombre'];
+                  });
+                },
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: seleccionarCategoria == categoria['nombre']
+                          ? Colors.blue
+                          : Colors.grey,
+                    ),
+                  ),
+                  child: Text(categoria['nombre']),
                 ),
-              ],
-            )
+              ),
+            SizedBox(height: 20),
+            if (seleccionarCategoria.isNotEmpty)
+              Column(
+                children: [
+                  Text('Productos en la categoría $seleccionarCategoria:'),
+                  for (var product in productosCategoria[seleccionarCategoria]!)
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 100,
+                            height: 100,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green),
+                            ),
+                            child: Image.asset(product['img']),
+                          ),
+                          SizedBox(width: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Nombre: ${product['nombre']}'),
+                              Text('Cantidad: ${product['cantidad']}'),
+                              Text(
+                                  'Fecha Vencimiento: ${product['fechaVencimiento']}'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
+              ),
           ],
         ),
-      )),
+      ),
     );
   }
 }
