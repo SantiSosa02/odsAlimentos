@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ods_alimentos/presentations/springs/screenFirst.dart';
-import 'package:ods_alimentos/presentations/springs/screenFourth.dart';
-import 'package:ods_alimentos/presentations/springs/screenSecond.dart';
-import 'package:ods_alimentos/presentations/springs/screenThird.dart';
+import 'package:ods_alimentos/presentations/screens/screenFirst.dart';
+import 'package:ods_alimentos/presentations/screens/screenFourth.dart';
+import 'package:ods_alimentos/presentations/screens/screenSecond.dart';
+import 'package:ods_alimentos/presentations/screens/screenThird.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
@@ -50,7 +50,7 @@ class MenuDrawer extends StatelessWidget {
          const SizedBox(height: 15),
           ListTile(
             leading: const Icon(Icons.date_range_rounded),
-            title:const  Text("Alimentos cercanos a vencerse"),
+            title:const  Text("Alimentos próximos a vencer"),
             onTap: () {
               Navigator.push(
                 context,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ods_alimentos/presentations/springs/screenSecond.dart';
+//import 'package:ods_alimentos/presentations/screens/screenSecond.dart';
+import 'package:intl/intl.dart'; 
 
 
 import '../windgets/menu_appbar.dart';
@@ -13,7 +14,7 @@ class ScreenThird extends StatefulWidget {
 }
 
 class _ScreenThirdState extends State<ScreenThird> {
- List<Map<String, dynamic>> alimentos = [
+ List<Map<String, dynamic>> alimentos =  [
     {
       'Nombre': 'Cerdo',
       'Cantidad': '10',
@@ -92,7 +93,6 @@ class _ScreenThirdState extends State<ScreenThird> {
         'Fecha_vencimiento': DateTime(2023, 8, 24, 14, 15),
         'Categoria': 'Frutas'
     }
-    // Agrega más elementos a la lista si es necesario
   ];
 
   List<Map<String, dynamic>> obtenerAlimentosProximosAVencer() {
@@ -108,8 +108,7 @@ class _ScreenThirdState extends State<ScreenThird> {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> alimentosProximosAVencer =
-        obtenerAlimentosProximosAVencer();
+    List<Map<String, dynamic>> alimentosProximosAVencer = obtenerAlimentosProximosAVencer();
 
     return Scaffold(
       appBar: const MenuAppBar(),
@@ -118,7 +117,7 @@ class _ScreenThirdState extends State<ScreenThird> {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(
+            child: const Text(
               'Alimentos Próximos a Vencer',
               style: TextStyle(
                 fontSize: 20,
@@ -143,7 +142,8 @@ class _ScreenThirdState extends State<ScreenThird> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Cantidad: ${alimento['Cantidad']}'),
-                        Text('Fecha de vencimiento: ${alimento['Fecha_vencimiento']}'),
+                        Text('Fecha de vencimiento: ${DateFormat('dd/MM/yyyy').format(alimentos[index]['Fecha_vencimiento'])}',
+                         style: const TextStyle(color: Colors.red) ,),
                         Text('Categoría: ${alimento['Categoria']}'),
                       ],
                     ),

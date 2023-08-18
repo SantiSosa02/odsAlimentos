@@ -11,11 +11,11 @@ class MenuAppBar extends StatelessWidget implements PreferredSizeWidget{
       title: const Text("NutriSabor",style: TextStyle(
         fontSize: 23,
         fontFamily: 'Caprismo',
-        color: Color.fromARGB(255, 179, 152, 150),
+        color: Color.fromARGB(255, 250, 229, 227),
       ),
       ),
       centerTitle: true,
-      backgroundColor:const  Color.fromARGB(255, 218, 214, 214),
+      backgroundColor:Color.fromARGB(255, 192, 23, 23),
       
       );
       

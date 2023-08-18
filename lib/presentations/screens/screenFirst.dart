@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ods_alimentos/presentations/springs/screenFourth.dart';
-import 'package:ods_alimentos/presentations/springs/screenSecond.dart';
-import 'package:ods_alimentos/presentations/springs/screenThird.dart';
+import 'package:ods_alimentos/presentations/screens/screenFourth.dart';
+import 'package:ods_alimentos/presentations/screens/screenSecond.dart';
+import 'package:ods_alimentos/presentations/screens/screenThird.dart';
 import 'package:ods_alimentos/presentations/windgets/menu_appbar.dart';
 import 'package:ods_alimentos/presentations/windgets/menu_drawer.dart';
 
