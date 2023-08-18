@@ -16,7 +16,9 @@ class MenuAppBar extends StatelessWidget implements PreferredSizeWidget{
       ),
       centerTitle: true,
       backgroundColor:const  Color.fromARGB(255, 218, 214, 214),
+      
       );
+      
   }
   
   @override
